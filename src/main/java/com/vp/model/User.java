@@ -11,14 +11,17 @@ public class User {
     public String firstName;
     public String lastName;
     public String userName;
+    public String role;
     public String password;
 
     public User() {}
 
-    public User(String firstName, String lastName, String userName, String password) {
-        this.firstName = firstName;
+    public User(String id, String firstName, String lastName, String userName, String role, String password) {
+        this.id = id;
+    	this.firstName = firstName;
         this.lastName = lastName;
         this.userName = userName;
+        this.role = role;
         this.password = password;
     }
 
