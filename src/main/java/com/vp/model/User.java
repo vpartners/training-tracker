@@ -1,11 +1,17 @@
 package com.vp.model;
 
+import java.io.Serializable;
 import java.util.List;
 
 import org.springframework.data.annotation.Id;
 
 
-public class User {
+public class User implements Serializable {
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -6529839686203506257L;
 
 	@Id
     public String id;
