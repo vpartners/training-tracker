@@ -1,35 +1,48 @@
 package com.vp.model;
 
+import java.util.List;
+
 import org.springframework.data.annotation.Id;
 
 
 public class User {
 
-    @Id
+	@Id
     public String id;
 
     public String firstName;
     public String lastName;
     public String userName;
-    public String role;
+    public String email;
+    public List<String> roles;
     public String password;
 
     public User() {}
 
-    public User(String id, String firstName, String lastName, String userName, String role, String password) {
+    public User(String id, String firstName, String lastName, String userName, String email, List<String> roles, String password) {
         this.id = id;
     	this.firstName = firstName;
         this.lastName = lastName;
         this.userName = userName;
-        this.role = role;
+        this.email = email;
+        this.roles = roles;
+        this.password = password;
+    }
+    
+    public User(String firstName, String lastName, String userName, String email, List<String> roles, String password) {
+    	this.firstName = firstName;
+        this.lastName = lastName;
+        this.userName = userName;
+        this.email = email;
+        this.roles = roles;
         this.password = password;
     }
 
     @Override
     public String toString() {
         return String.format(
-                "Customer[id=%s, firstName='%s', lastName='%s', userName='%s']",
-                id, firstName, lastName, userName);
+                "User[id=%s, firstName='%s', lastName='%s', userName='%s', email='%s', roles='%s']",
+                id, firstName, lastName, userName, email, roles);
     }
 
 }
